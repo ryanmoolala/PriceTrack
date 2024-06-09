@@ -5,7 +5,7 @@ StockPulse is a web application designed to provide real-time data on stock pric
 
 Tech Stack used: Frontend / Client
 
-HTML
-Tailwind CSS
-JavaScript
-ReactJS
+- HTML
+- Tailwind CSS
+- JavaScript
+- ReactJS
