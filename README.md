@@ -11,3 +11,9 @@ Frontend / Client
 - Tailwind CSS
 - JavaScript
 - ReactJS
+
+</br>
+
+Backend / Server
+- TypeScript
+- NodeJS
