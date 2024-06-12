@@ -17,3 +17,6 @@ Frontend / Client
 Backend / Server
 - TypeScript
 - NodeJS
+
+Resources:
+- [FinnHub Documentation](https://finnhub.io/docs/api)
