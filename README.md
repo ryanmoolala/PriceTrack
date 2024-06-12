@@ -1,7 +1,7 @@
 # PriceTrack
 
 Description:
-PriceTrack is a web application designed to provide real-time data on stock prices. It ensures users have the most up-to-date information on their favorite stocks. Whether you're a seasoned investor or a market enthusiast, StockPulse delivers instant price updates, trend analysis, and insightful metrics to help you make informed decisions. Track market movements, analyze stock performance. 
+PriceTrack is a web application designed to provide real-time data on stock prices. It ensures users have the most up-to-date information on their favorite stocks.
 
 Tech Stack used: 
 <br/>
