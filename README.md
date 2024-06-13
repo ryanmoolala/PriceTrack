@@ -9,7 +9,7 @@ Tech Stack used:
 Frontend / Client
 - HTML
 - Tailwind CSS
-- JavaScript
+- TypeScript
 - ReactJS
 
 </br>
@@ -17,6 +17,7 @@ Frontend / Client
 Backend / Server
 - TypeScript
 - NodeJS
+- ExpressJS 
 
 Resources:
 - [FinnHub Documentation](https://finnhub.io/docs/api)
