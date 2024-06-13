@@ -12,20 +12,12 @@ app.use(cors({
     credentials: true // allow cookies to be sent
   }));
 
-// Specify the port number for the server
 const port: number = 5001;
-
-// Define a route for the root path ('/')
-app.get('/', (req: Request, res: Response) => {
-  // Send a response to the client
-  res.send('BACKEND FOR PRICETRACK WEBAPP');
-});
 
 app.get('/api/test', (req: Request, res: Response) => {
     res.send('Hello TEST BACKEND')
 })
 
-// Start the server and listen on the specified port
 app.listen(port, () => {
    console.log(`Server is running on http://localhost:${port}`);
 });

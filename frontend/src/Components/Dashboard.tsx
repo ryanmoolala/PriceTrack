@@ -13,11 +13,6 @@ const Dashboard = () => {
         setMessage(response.data);
     })
       .catch((error) => console.log(error));
-
-    /*api
-      .get("/")
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));*/
   }, []);
 
   return <div>{message}</div>;

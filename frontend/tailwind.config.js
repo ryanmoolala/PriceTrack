@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navy: '#0A2741',           // Navy Blue
+      },
+      fontFamily: {
+        'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+        // Adjust the fallback fonts as needed
+      },
+    },
   },
   plugins: [],
 }
