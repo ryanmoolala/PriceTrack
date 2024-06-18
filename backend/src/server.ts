@@ -18,8 +18,8 @@ import path from "path";
 const app = express();
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-const port = process.env.PORT || "5001";
-const key = process.env.API_KEY || "cpkob91r01qs6dmc7v70cpkob91r01qs6dmc7v7g";
+const port = process.env.PORT || '';
+const key = process.env.API_KEY || '';
 
 //Middleware setup
 app.use(corsConfig);
