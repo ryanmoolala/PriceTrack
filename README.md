@@ -1,7 +1,7 @@
 # PriceTrack
 
 Description:
-PriceTrack is a web application designed to provide real-time data on stock prices. It ensures users have the most up-to-date information on their favorite stocks. 
+PriceTrack is a web application designed to provide real-time data on stock prices. It ensures users have the most up-to-date information on their favourite stocks. 
 
 This project was done purely to experiment WebSockets & Web scraping, mainly because I did not get to with [DJ Lite](https://github.com/ryanmoolala/DJ-Lite)
 
@@ -23,7 +23,9 @@ Backend / Server
 
 Others
 - Docker Compose
-- WebSockets 
+- WebSockets
+- Axios, Cheerio
 
 Resources:
 - [FinnHub Documentation](https://finnhub.io/docs/api)
+- [Cheerio](https://cheerio.js.org/)
