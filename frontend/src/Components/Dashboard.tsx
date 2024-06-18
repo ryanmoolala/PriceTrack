@@ -39,13 +39,10 @@ const Dashboard = () => {
   useEffect(() => {
     searchStockQuotes();
 
-    const socket = new WebSocket("ws://localhost:5001");
+    const socket = new WebSocket('ws://localhost:5001');
 
     socket.onopen = () => {
       console.log("WebSocket connection from frontend");
-      return () => {
-        socket.close();
-      };
     };
 
     socket.onmessage = (event) => {
