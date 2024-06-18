@@ -5,6 +5,8 @@ PriceTrack is a web application designed to provide real-time data on stock pric
 
 This project was done purely to experiment WebSockets & Web scraping, mainly because I did not get to with [DJ Lite](https://github.com/ryanmoolala/DJ-Lite)
 
+(Disclaimer: FinnHUB websocket endpoint does not work anymore, it expired) 
+
 Tech Stack used: 
 <br/>
 
