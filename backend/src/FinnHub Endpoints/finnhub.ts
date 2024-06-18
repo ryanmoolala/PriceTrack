@@ -1,7 +1,13 @@
 import "dotenv/config";
 
-export const searchSymbol = (finnhubClient : any, symbol : string) => {
-  finnhubClient.quote(symbol, (error:string, data:string, response:string) => {
-    console.log(data)
-});
+export const searchQuote = (finnhubClient: any, symbol: string): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    finnhubClient.quote(symbol, (error: string, data: any) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(data);
+      }
+    });
+  });
 };
