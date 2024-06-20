@@ -43,10 +43,18 @@ const Dashboard = () => {
 
     socket.onopen = () => {
       console.log("WebSocket connection from frontend");
+
+      const intervalId = setInterval(() => {
+        if (socket.readyState === WebSocket.OPEN) {
+          const message = { type: 'ping', timestamp: new Date().toISOString() };
+          socket.send(JSON.stringify(message));
+        }
+      }, 5000);
     };
 
     socket.onmessage = (event) => {
       try {
+        console.log(event.data);
         const data: StockData[] = JSON.parse(event.data) as StockData[];
         setStockdata(data);
       } catch (error) {
@@ -58,9 +66,6 @@ const Dashboard = () => {
       console.error("Websocket Error: ", error);
     };
 
-    return () => {
-      socket.close();
-    };
   }, []);
 
   return (

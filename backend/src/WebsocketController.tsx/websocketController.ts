@@ -11,11 +11,16 @@ export const setupWebSocketServer = (wss: WebSocketServer, symbol: string, key: 
   wss.on("connection", (ws: WebSocket) => {
     console.log("Client connected");
 
-    client = ws;
-
     ws.send(JSON.stringify({ message: "Connection established" }));
 
+    client = ws;
+
     finnhubSocketCreate(symbol, key); //Estbalish websocket connection AFTER client - server connection establishes
+
+    /*const intervalId = setInterval(() => {
+      const message = { timestamp: new Date().toISOString(), message: "Hello from server" };
+      ws.send(JSON.stringify(message));
+    }, 5000);*/
 
     ws.on("message", (message: Buffer) => {
       const parsedMessage = JSON.parse(message.toString());
@@ -24,10 +29,12 @@ export const setupWebSocketServer = (wss: WebSocketServer, symbol: string, key: 
 
     ws.on("close", () => {
       console.log("Client disconnected");
+      //clearInterval(intervalId);
     });
 
     ws.on("error", (error) => {
       console.error("WebSocket error:", error);
+      //clearInterval(intervalId);
     });
   });
 };
@@ -42,6 +49,7 @@ export const finnhubSocketCreate = (symbol : string, key : string) => {
   // Connection opened -> Subscribe
   finnhubSocket.on("open", () => {
     console.log('finnhub websokcet ', {symbol})
+
       finnhubSocket.send(
         JSON.stringify({ type: "subscribe", symbol: {symbol}, price: "quote" })
       );

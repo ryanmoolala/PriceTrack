@@ -18,8 +18,8 @@ import path from "path";
 const app = express();
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-const port = process.env.PORT || '';
-const key = process.env.API_KEY || '';
+const port = process.env.PORT || '5001';
+const key = process.env.API_KEY || 'cppp911r01qi7uaip2s0cppp911r01qi7uaip2sg';
 
 //Middleware setup
 app.use(corsConfig);
@@ -39,18 +39,13 @@ const wss = new WebSocketServer({ server });
 //index api
 app.get("/", async (req, res) => {
   const symbol = req.query.symbol as string; // Change type assertion to string
-
-  console.log("API ", process.env.API_KEY);
-
+  setupWebSocketServer(wss, symbol, key);
   const quoteData: Promise<string> = await searchQuote(finnhubClient, symbol);
   res.send(quoteData);
-
-  setupWebSocketServer(wss, symbol, key); // Pass symbol as an array to setupWebSocketServer
 });
 
 app.get("/api/quote", async (req, res) => {
   const symbol = req.query.symbol as string | undefined;
-  console.log(symbol);
   if (symbol) {
     try {
       const googleResult = await googleSearch(symbol);
